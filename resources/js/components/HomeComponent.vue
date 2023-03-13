@@ -1,8 +1,13 @@
 <template>
     <ExampleComponent />
+    <br>
     <div class="wrapper">
         <div v-for="airport in airports" :key="airport.abbreviation">
-            <AirportCardComponent :airport="airport"/>
+            <AirportCardComponent :airport="airport" @click="$store.dispatch('addToFavorites',airport)" />
+        </div>
+        <h2 v-if="$store.state.airports.favorites.length">Favorites</h2>
+        <div v-for="airport in $store.state.airports.favorites" :key="airport.abbreviation">
+          <AirportCardComponent :airport="airport" />
         </div>
     </div>
 </template>

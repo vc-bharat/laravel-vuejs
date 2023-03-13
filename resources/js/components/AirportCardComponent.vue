@@ -7,7 +7,6 @@
 </template>
 
 <script>
-console.log("asdad");
 export default {
     props: {
         airport: {
