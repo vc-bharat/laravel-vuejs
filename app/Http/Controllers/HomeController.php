@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function testCollection()
     {
         $arr = ['1','2','3',];
-        dd($arr);
+        // dd($arr);
         Collection::macro('toUpper', function () {
             return $this->map(function (string $value) {
                 return Str::upper($value);
@@ -43,6 +43,6 @@ class HomeController extends Controller
         $collection = collect(['first', 'second']);
 
         $upper = $collection->toUpper();
-        dd($upper);
+        // dd($upper);
     }
 }
